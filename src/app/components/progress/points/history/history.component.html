@@ -1,0 +1,62 @@
+<article class="space-y-5 xl:w-fit mx-auto">
+
+  <h3 class="font-semibold">Historial de Actividades</h3>
+
+  <div class="flex flex-wrap items-center justify-between gap-2 w-full">
+    <p class="">896 tareas completadas en el último año</p>
+
+    <div class="flex text-sm items-center gap-x-2">
+      <p>Menos</p>
+      <div class="size-4 rounded bg-gray-100"></div>
+      <div class="size-4 rounded bg-green-300"></div>
+      <div class="size-4 rounded bg-green-500"></div>
+      <div class="size-4 rounded bg-green-700"></div>
+      <div class="size-4 rounded bg-green-900"></div>
+      <p>Más</p>
+    </div>
+  </div>
+
+  <div class="overflow-x-auto flex gap-x-2 pb-1">
+    <div class="grid grid-rows-8 items-end">
+      <p class="text-xs leading-none"></p>
+      <p class="text-xs leading-none">Lun</p>
+      <p class="text-xs leading-none">Mar</p>
+      <p class="text-xs leading-none">Mie</p>
+      <p class="text-xs leading-none">Jue</p>
+      <p class="text-xs leading-none">Vie</p>
+      <p class="text-xs leading-none">Sab</p>
+      <p class="text-xs leading-none">Dom</p>
+    </div>
+    <article class="space-y-2">
+      <div class="grid grid-cols-13">
+        <p class="text-xs">May</p>
+        <p class="text-xs">Jun</p>
+        <p class="text-xs">Jul</p>
+        <p class="text-xs">Ago</p>
+        <p class="text-xs">Sep</p>
+        <p class="text-xs">Oct</p>
+        <p class="text-xs">Nov</p>
+        <p class="text-xs">Dic</p>
+        <p class="text-xs">Ene</p>
+        <p class="text-xs">Feb</p>
+        <p class="text-xs">Mar</p>
+        <p class="text-xs">Abr</p>
+        <p class="text-xs">May</p>
+      </div>
+      <div class="flex gap-[2px]">
+        <div *ngFor="let week of contributions" class="flex flex-col gap-[2px]">
+          <button type="button"
+            *ngFor="let day of week"
+            class="w-4 h-4 rounded-sm transition-colors"
+            aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-activities" data-hs-overlay="#modal-activities"
+            [ngClass]="getColor(day.count)"
+            [title]="day.count + ' activities on ' + formatDate(day.date)"
+          ></button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <p class="text-gray-600 text-sm">Haz click en cualquier día para ver las actividades realizadas</p>
+
+</article>

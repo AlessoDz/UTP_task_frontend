@@ -1,0 +1,132 @@
+<section class="h-[100dvh] flex w-full">
+
+  <!-- Sidebar -->
+  <div class="hidden lg:flex bg-primary row-span-2 flex-col">
+
+    <!-- Boton Menú -->
+    <div class="w-full flex items-center justify-center h-8 my-4">
+      <button type="button">
+        <lucide-icon [name]="Menu" class="size-7 text-white" />
+      </button>
+    </div>
+
+    <!-- Menu Desktop -->
+    <div class="h-full flex-1">
+      <component-shared-sidebar />
+    </div>
+
+
+  </div>
+  <!-- End Sidebar -->
+
+  <!-- Menu Responsive -->
+  <div id="sidebar" class="hs-overlay [--auto-close:lg] lg:hidden w-32
+    hs-overlay-open:translate-x-0
+    -translate-x-full transition-all duration-300 transform
+    fixed top-0 start-0 bottom-0 z-60" role="dialog" tabindex="-1" aria-label="Sidebar" >
+    <component-shared-sidebar />
+  </div>
+
+  <div class="flex flex-col h-full w-full overflow-y-auto ">
+
+    <!-- Header -->
+    <nav class="w-full bg-white flex items-center justify-between max-w-[107rem] mx-auto lg:py-3 sm:py-0 pr-5 sm:pr-7 lg:px-14 shrink-0">
+
+      <div class="flex items-center h-full">
+
+        <!-- Button Menu Responsive -->
+        <button type="button"
+          class="py-5.5 lg:hidden bg-primary px-5 h-full"
+          aria-haspopup="dialog" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation"
+          data-hs-overlay="#sidebar"
+        >
+
+          <lucide-icon [name]="Menu" class="size-5 stroke-[2.5] text-white" />
+
+        </button>
+
+        <!-- Logo -->
+        <a routerLink="/dashboard" class="max-lg:ml-5 h-5 sm:h-6 object-contain">
+          <img src="/img/logo.png" alt="Logo UTP" class="h-full" />
+        </a>
+
+      </div>
+
+
+      <div class="flex items-center gap-x-3 sm:gap-x-5">
+
+        <!-- Notificaciones Dropdown -->
+        <div class="hs-dropdown [--placement:bottom-right] relative inline-flex">
+
+          <button id="notifications-dropdown" type="button"
+            class="hs-dropdown-toggle relative p-2 rounded-full bg-white hover:bg-gray-100">
+            <lucide-icon [name]="Bell" class="size-4.5" />
+
+            <span class="absolute top-0 right-0 w-2 h-2 bg-red-600 rounded-full"></span>
+          </button>
+
+          <div class="hs-dropdown-menu z-10 transition-[opacity,margin] border border-gray-200 duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-md contain-content"
+            role="menu" aria-orientation="vertical" aria-labelledby="notifications-dropdown">
+            <component-notifications-dropdown />
+          </div>
+
+        </div>
+
+        <!-- Boton de Usuario -->
+        <div class="hs-dropdown [--placement:bottom-right] relative inline-flex">
+
+          <button id="profile-dropdown" type="button"
+            class="hs-dropdown-toggle relative flex items-center gap-x-2 ml-2">
+
+            <!-- Nombre de usuario -->
+            <div class="sm:pl-4 sm:border-l sm:border-l-gray-500 text-sm text-end">
+              <p class="hidden sm:block">Hola, <span class="font-medium">Marcio Alessandro</span></p>
+              <p class="text-xs text-gray-500 hidden sm:block">Estudiante</p>
+            </div>
+
+            <!-- Foto de perfil -->
+            <div class="bg-gray-200 rounded-full size-10 overflow-hidden">
+              <img
+                src="https://class.utp.edu.pe/static/media/student.42525dea.svg"
+                alt="Foto de perfil"
+                class="size-full object-cover"
+              />
+            </div>
+
+            <svg class="hs-dropdown-open:rotate-180 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+
+          </button>
+
+          <div class="hs-dropdown-menu transition-[opacity,margin] border border-gray-200 duration hs-dropdown-open:opacity-100 opacity-0 z-50 hidden min-w-60 bg-white shadow-md rounded-md"
+            role="menu" aria-orientation="vertical" aria-labelledby="profile-dropdown">
+            <component-profile-dropdown />
+          </div>
+
+        </div>
+      </div>
+    </nav>
+    <!-- End Header -->
+
+    <!-- Content -->
+    <div class="bg-gray-100 px-5 sm:px-7 lg:px-14 py-10 flex-1">
+
+      @defer (on viewport) {
+
+        <div class="w-full max-w-[100rem] mx-auto">
+          <router-outlet />
+        </div>
+
+      }
+      @placeholder {
+
+        <!-- Loading template -->
+        <div class="h-full flex flex-col justify-center gap-y-3 items-center">
+          <img src="/img/load-spinner.gif" alt="" class="h-12">
+          <p class="text-sm text-gray-700">Cargando contenido</p>
+        </div>
+
+      }
+    </div>
+  </div>
+
+</section>

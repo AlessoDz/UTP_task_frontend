@@ -1,0 +1,22 @@
+<section class="w-full flex flex-col h-full gap-y-10 relative">
+
+  <div class="flex items-center gap-x-3 ">
+    <a href="/dashboard/grupos"
+      class="text-sm underline-offset-4 pr-3 border-r border-gray-800 font-semibold text-primary flex items-center gap-x-1 hover:underline">
+      <lucide-icon [name]=ArrowLeft class="size-4" />
+      Volver a grupos
+    </a>
+    <p class="font-semibold">Detalles de grupo</p>
+  </div>
+
+  <div class="h-full">
+    <component-groups-details />
+  </div>
+
+  <!-- Toast Component (Editar / Eliminar / Exportar) -->
+  <div class="sticky bottom-3 sm:bottom-5 z-40 left-1/2 transform mt-0 w-full flex justify-center">
+    <component-shared-toast [detailsGroup]=true />
+  </div>
+
+
+</section>

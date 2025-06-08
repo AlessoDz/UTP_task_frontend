@@ -1,0 +1,192 @@
+<section class="w-full max-w-4xl mx-auto bg-white rounded-md">
+
+  <div class="py-4 sm:py-5 px-5 md:px-9 border-b border-gray-200">
+     <p class="font-semibold text-lg">📝 Crear tarea</p>
+  </div>
+
+
+  <div class="flex flex-col gap-y-5 py-4 sm:py-6 px-5 md:px-10">
+
+    <div class="space-y-2">
+      <label for="" class="block text-sm font-semibold">Título de la tarea</label>
+      <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1"
+      placeholder="Ingrese el título de la tarea">
+    </div>
+
+    <div class="space-y-2">
+      <label for="" class="block text-sm font-semibold">Descripción (opcional)</label>
+      <textarea type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1"
+        placeholder="Ingrese la descripción de la tarea"></textarea>
+    </div>
+
+    <!-- Prioridad -->
+    <div class="space-y-2 -mt-2">
+      <label for="priority" class="block text-sm font-semibold">Prioridad</label>
+      <!-- Select -->
+      <select data-hs-select='{
+        "placeholder": "Seleccione la prioridad",
+        "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+        "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-2 ps-3 pe-9 flex gap-x-2 text-nowrap cursor-pointer bg-white w-full border border-gray-300 rounded-md text-start text-base focus:outline-hidden focus:ring-2 focus:ring-primary",
+        "dropdownClasses": "z-50 animate-fade-in w-full max-h-72 p-1 bg-white border border-gray-200 rounded-md overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300",
+        "optionClasses": "py-2 px-3 w-full text-base cursor-pointer hover:bg-gray-100 rounded-md focus:outline-hidden focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50",
+        "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"hidden hs-selected:block\"><svg class=\"shrink-0 size-4 text-primary \" xmlns=\"http:.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg></span></div>",
+        "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down-icon lucide-chevron-down shrink-0 size-3.5 text-gray-500\"><path d=\"m6 9 6 6 6-6\"/></svg></div>"
+      }' class="hidden">
+        <option value="">Choose</option>
+        <option value="baja">Baja</option>
+        <option value="media">Media</option>
+        <option value="alta">Alta</option>
+      </select>
+      <!-- End Select -->
+    </div>
+
+    <div class="space-y-2">
+      <label for="" class="block text-sm font-semibold">Fecha</label>
+      <input type="date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1"
+      [(ngModel)]="fecha"name="fecha">
+    </div>
+
+    <div class="hs-accordion-group" data-hs-accordion-always-open="">
+
+      <div class="hs-accordion active border-b border-gray-200" id="hs-basic-always-open-heading-one">
+
+        <button class="hs-accordion-toggle py-5 flex items-center gap-x-3 w-full font-semibold text-start underline-offset-4 hover:underline justify-between" aria-expanded="true" aria-controls="hs-basic-always-open-collapse-one">
+          Tipo de Tarea
+          <lucide-icon [name]="ChevronUp" class="hs-accordion-active:block hidden size-5"></lucide-icon>
+          <lucide-icon [name]="ChevronDown" class="hs-accordion-active:hidden block size-5"></lucide-icon>
+        </button>
+
+        <div id="hs-basic-always-open-collapse-one" class="hs-accordion-content w-full transition-[height] duration-200" role="region" aria-labelledby="hs-basic-always-open-heading-one">
+          <div class="py-5 space-y-5">
+
+            <div class="flex gap-2 items-center">
+              <button (click)="typeTask = 'personal'"
+                [ngClass]="{
+                  'bg-primary text-white': typeTask === 'personal',
+                  'bg-transparent text-primary': typeTask !== 'personal'
+                }"
+                class="flex items-center border border-primary text-sm px-3 py-2 w-full rounded-md font-semibold justify-center"
+              > Personal
+              </button>
+
+              <button (click)="typeTask = 'grupal'"
+                [ngClass]="{
+                  'bg-primary text-white': typeTask === 'grupal',
+                  'bg-transparent text-primary': typeTask !== 'grupal'
+                }"
+                class="flex items-center border border-primary text-sm px-3 py-2 w-full rounded-md font-semibold justify-center"
+              > Grupal
+              </button>
+            </div>
+
+            <div [ngClass]="{ 'hidden': typeTask !== 'grupal' }" class="space-y-2 sm:col-span-2">
+              <label for="group" class="block text-sm font-semibold">Agrega un Grupo</label>
+              <!-- Select -->
+              <select data-hs-select='{
+                "placeholder": "Seleccione un grupo",
+                "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+                "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-2 ps-3 pe-9 flex gap-x-2 text-nowrap cursor-pointer bg-white w-full border border-gray-300 rounded-md text-start text-base focus:outline-hidden focus:ring-2 focus:ring-primary",
+                "dropdownClasses": "z-50 animate-fade-in w-full max-h-72 p-1 bg-white border border-gray-200 rounded-md overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300",
+                "optionClasses": "py-2 px-3 w-full text-base cursor-pointer hover:bg-gray-100 rounded-md focus:outline-hidden focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50",
+                "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"hidden hs-selected:block\"><svg class=\"shrink-0 size-4 text-primary \" xmlns=\"http:.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"/></svg></span></div>",
+                "extraMarkup": "<div class=\"absolute top-1/2 end-3 -translate-y-1/2\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down-icon lucide-chevron-down shrink-0 size-3.5 text-gray-500\"><path d=\"m6 9 6 6 6-6\"/></svg></div>"
+              }' class="hidden">
+                <option value="">Choose</option>
+                <option value="media">Grupo 1 </option>
+                <option value="alta">Grupo 2 </option>
+              </select>
+              <!-- End Select -->
+
+              <p class="text-sm text-gray-500">Se le notificará a los miembros del grupo cuando la tarea sea registrada.</p>
+            </div>
+
+            <!-- Seguimiento de Progreso -->
+            <div class="flex items-center gap-x-2 sm:col-span-2">
+              <input type="checkbox" id="progress" name="progress" [(ngModel)]="progress"/>
+              <label for="progress" class="text-sm font-medium">Activar seguimiento de progreso interno</label>
+            </div>
+
+            <div [ngClass]="{ 'hidden': !progress }" class="sm:col-span-2">
+              <div class="flex items-center gap-x-3 w-full">
+                <input type="text" class="input-text w-full" placeholder="Añadir subtarea..."/>
+                <button class="btn-primary">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hs-accordion border-b border-gray-200" id="hs-basic-always-open-heading-two">
+        <button class="hs-accordion-toggle py-5 flex items-center gap-x-3 w-full font-semibold text-start underline-offset-4 hover:underline justify-between" aria-expanded="false" aria-controls="hs-basic-always-open-collapse-two">
+          Configurar Hora
+          <lucide-icon [name]="ChevronUp" class="hs-accordion-active:block hidden size-5"></lucide-icon>
+          <lucide-icon [name]="ChevronDown" class="hs-accordion-active:hidden block size-5"></lucide-icon>
+        </button>
+        <div id="hs-basic-always-open-collapse-two" class="hs-accordion-content hidden w-full transition-[height] duration-200" role="region" aria-labelledby="hs-basic-always-open-heading-two">
+          <div class="py-5 space-y-5">
+            <div class="flex gap-2 items-center">
+              <button (click)="typeHour = 'alarma'"
+                [ngClass]="{
+                  'bg-primary text-white': typeHour === 'alarma',
+                  'bg-transparent text-primary': typeHour !== 'alarma'
+                }"
+                class="flex items-center border border-primary text-sm px-3 py-2 w-full rounded-md font-semibold justify-center"
+              > Alarma
+              </button>
+
+              <button (click)="typeHour = 'duracion'"
+                [ngClass]="{
+                  'bg-primary text-white': typeHour === 'duracion',
+                  'bg-transparent text-primary': typeHour !== 'duracion'
+                }"
+                class="flex items-center border border-primary text-sm px-3 py-2 w-full rounded-md font-semibold justify-center"
+              > Duración
+              </button>
+            </div>
+
+            <div *ngIf="typeHour === 'alarma'">
+              <div class="space-y-2">
+                <label for="" class="block text-sm font-semibold">Hora</label>
+                <input type="time" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1"
+                [(ngModel)]="hora"name="hora">
+              </div>
+            </div>
+
+            <div *ngIf="typeHour === 'duracion'"  class="grid grid-cols-2 gap-2 items-center">
+              <div class="space-y-2">
+                <label for="" class="block text-sm font-semibold">Hora de inicio</label>
+                <input type="time" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1" value="00:00" name="hora">
+              </div>
+
+              <div class="space-y-2">
+                <label for="" class="block text-sm font-semibold">Duración</label>
+                <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1" value="23:59" name="hora">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hs-accordion" id="hs-basic-always-open-heading-three">
+        <button class="hs-accordion-toggle hs-accordion-active:text-blue-600 py-3 inline-flex items-center gap-x-3 w-full font-semibold text-start text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 rounded-lg disabled:opacity-50 disabled:pointer-events-none" aria-expanded="false" aria-controls="hs-basic-always-open-collapse-three">
+          <svg class="hs-accordion-active:hidden block size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5v14"></path>
+          </svg>
+          <svg class="hs-accordion-active:block hidden size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+          </svg>
+          Accordion #3
+        </button>
+        <div id="hs-basic-always-open-collapse-three" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="hs-basic-always-open-heading-three">
+          <p class="text-gray-800">
+            <em>This is the first item's accordion body.</em> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

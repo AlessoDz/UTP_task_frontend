@@ -1,0 +1,65 @@
+<div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-sm sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center">
+  <div class="w-full flex flex-col bg-white border border-gray-200 shadow-2xs rounded-xl pointer-events-auto">
+
+    <!-- Encabezado -->
+    <div class="flex justify-between items-center py-3 px-4 border-b border-gray-200">
+      <h3 id="modal-calendar-label" class="font-bold text-gray-800">
+        Seleccione una fecha
+      </h3>
+      <button type="button" class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none" aria-label="Close" data-hs-overlay="#modal-calendar">
+        <span class="sr-only">Close</span>
+        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-4 space-y-3">
+
+      <!-- Mes -->
+      <div class="w-full flex items-center justify-between p-1 rounded-md bg-gray-100">
+        <button type="button" (click)="previousMonth()"
+          class="flex items-center gap-x-2 bg-white font-semibold text-sm p-1 rounded-md">
+          <lucide-icon [name]="ChevronLeft" class="size-5" />
+        </button>
+
+        <h3 class="font-semibold capitalize">
+          {{ currentMonth | date:'MMMM yyyy' }}
+        </h3>
+
+        <button type="button" (click)="nextMonth()"
+          class="flex items-center gap-x-2 bg-white font-semibold text-sm p-1 rounded-md">
+          <lucide-icon [name]="ChevronRight" class="size-5" />
+        </button>
+      </div>
+
+      <!-- Días de la semana -->
+      <div class="grid grid-cols-7 gap-1 text-center text-gray-500 text-sm">
+        <div *ngFor="let day of daysOfWeek">{{ day }}</div>
+      </div>
+
+      <!-- Días del mes -->
+      <div class="grid grid-cols-7 gap-1 mt-1 text-center">
+        <ng-container *ngFor="let day of getDays()">
+          <button data-hs-overlay="#modal-calendar"
+            *ngIf="day; else empty"
+            (click)="selectDate(day)"
+            class="cursor-pointer rounded py-1 hover:bg-primary hover:text-white"
+            [ngClass]="{
+              'bg-primary text-white font-semibold': isSelected(day),
+              'text-gray-400 cursor-default': day === null
+            }"
+          >
+            {{ day }}
+          </button>
+          <ng-template #empty>
+            <div></div>
+          </ng-template>
+        </ng-container>
+      </div>
+
+    </div>
+  </div>
+</div>

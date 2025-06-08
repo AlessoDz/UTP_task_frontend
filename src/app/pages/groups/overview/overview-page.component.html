@@ -1,0 +1,33 @@
+
+<section class="w-full flex flex-col gap-y-10">
+
+  <!-- Title -->
+  <div class="flex items-center gap-x-2 justify-between">
+    <div>
+      <h3 class="text-lg font-semibold text-primary line-clamp-1">Grupos</h3>
+      <p class="text-sm text-gray-700 line-clamp-1">Panel general de grupos.</p>
+    </div>
+
+    <button type="button"
+      class="hs-dropdown-toggle relative btn-primary flex items-center gap-x-1"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-add-group" data-hs-overlay="#modal-add-group">
+      Crear grupo
+    </button>
+
+  </div>
+
+  <div id="modal-add-group" class="hs-overlay hidden size-full fixed top-0 start-0 z-50 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-add-group-label">
+    <component-groups-add />
+  </div>
+
+  <!-- Content -->
+  <component-groups-table />
+
+  <div
+    *ngIf="mensajeEliminar"
+    class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-primary flex items-center gap-x-2 text-white px-4 py-2 rounded shadow-lg z-50 text-nowrap"
+  >
+    <lucide-icon [name]="Check" class="size-4" />
+    {{ mensajeEliminar }}
+  </div>
+</section>

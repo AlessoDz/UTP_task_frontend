@@ -1,0 +1,76 @@
+<section class="grid xl:grid-cols-3 gap-x-5 gap-y-3">
+
+  <!-- Puntos Totales -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow">
+    <div class="flex text-sm text-gray-600 items-center gap-x-2">
+      <lucide-icon [name]="TrendingUp" class="size-5 stroke-[1.5]" />
+      <h3 class="font-semibold">Puntos Totales</h3>
+    </div>
+
+    <div class="space-y-1">
+      <p class="text-sm text-gray-500">Ciclo actual</p>
+      <p class="font-semibold text-xl">1,250 <span class="text-sm text-green-600 ml-2">+45 pts. hoy</span></p>
+    </div>
+
+    <div class="grid grid-cols-[1fr_auto] gap-2 text-sm pt-1 py-2">
+      <p class="line-clamp-1">Progreso hacia la siguiente medalla</p>
+      <p class="font-semibold">75%</p>
+      <div class="relative col-span-2">
+        <div class="start-0 top-0 absolute w-full h-2 rounded bg-gray-200"></div>
+        <div class="start-0 top-0 absolute w-[75%] h-2 rounded bg-primary"></div>
+      </div>
+    </div>
+  </article>
+  <!-- End Puntos Totales -->
+
+  <!-- Medalla Actual -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow">
+    <div class="flex text-sm text-gray-600 items-center gap-x-2">
+      <lucide-icon [name]="Medal" class="size-5 stroke-[1.5]" />
+      <h3 class="font-semibold">Medalla Actual</h3>
+    </div>
+
+    <div class="space-y-3">
+      <p class="text-sm text-gray-500">Nivel de reconocimiento</p>
+      <div class="grid grid-cols-[auto_1fr] items-center gap-x-2">
+        <div class="bg-gradient-to-br from-amber-300 to-amber-600 rounded-full p-2 shadow-lg row-span-2">
+          <lucide-icon [name]="Award" class="size-7 text-white" />
+        </div>
+        <p class="font-semibold">Oro</p>
+        <p class="text-gray-500 text-sm">Nivel 3 de 5</p>
+      </div>
+      <p class="text-sm ">¡Felicidades! Has alcanzado un nivel destacado.</p>
+    </div>
+  </article>
+  <!-- End Medalla Actual -->
+
+  <!-- Racha Activa -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow">
+    <div class="flex text-sm text-gray-600 items-center gap-x-2">
+      <lucide-icon [name]="Flame" class="size-5 stroke-[1.5]" />
+      <h3 class="font-semibold">Racha Activa</h3>
+    </div>
+
+    <div class="space-y-1">
+      <p class="text-sm truncate text-gray-500">Días consecutivos</p>
+      <div class="flex items-center gap-x-3 font-medium">
+        <img src="/img/fire-icon.png" alt="Icono de racha" class="h-5">
+        <p class="font-semibold text-xl">17 días</p>
+      </div>
+      <div class="pt-3 space-y-2">
+        <div class="flex items-center gap-x-0.5">
+          <div class="h-2 w-full bg-primary rounded-xs"></div>
+          <div class="h-2 w-full bg-primary rounded-xs"></div>
+          <div class="h-2 w-full bg-primary rounded-xs"></div>
+          <div class="h-2 w-full bg-primary rounded-xs"></div>
+          <div class="h-2 w-full bg-primary rounded-xs"></div>
+          <div class="h-2 w-full bg-gray-300 rounded-xs"></div>
+          <div class="h-2 w-full bg-gray-300 rounded-xs"></div>
+        </div>
+        <p class="text-sm truncate">Últimos 7 días.</p>
+      </div>
+    </div>
+  </article>
+  <!-- End Racha Activa -->
+
+</section>

@@ -1,0 +1,95 @@
+<section class="space-y-5 w-full">
+
+  <div class="flex items-center gap-x-2 justify-between">
+    <p class="font-semibold text-primary">Archivos Compartidos</p>
+    <button type="button"
+        class="hs-dropdown-toggle relative !text-sm btn-primary"
+        aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-upload-file" data-hs-overlay="#modal-upload-file">
+        Cargar
+      </button>
+
+      <div id="modal-upload-file" class="hs-overlay hidden size-full fixed top-0 start-0 z-50 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-upload-file-label">
+        <component-shared-upload-file />
+      </div>
+  </div>
+
+  <div class="space-y-2">
+
+    <article class="px-3 py-2 rounded border border-gray-200 grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-2 items-center">
+      <lucide-icon [name]="File" class="size-4" />
+      <div class="text-sm">
+        <p class="line-clamp-1">wireframes_homepage_v1.pdf</p>
+        <p class="text-xs text-gray-600">2.4MB</p>
+      </div>
+      <button class="p-1.5 rounded-md hover:bg-gray-50">
+        <lucide-icon [name]="Download" class="size-4" />
+      </button>
+      <div class="col-span-3 w-full flex items-center text-xs gap-x-2">
+        <div class="rounded-full size-5 bg-gray-200 overflow-hidden">
+          <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="object-cover">
+        </div>
+        <p>Marianela Lizeth Santisteban Pisfil</p>
+        <p>-</p>
+        <p class="text-gray-500">Hace 5h</p>
+      </div>
+    </article>
+
+    <article class="px-3 py-2 rounded border border-gray-200 grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-2 items-center">
+      <lucide-icon [name]="File" class="size-4" />
+      <div class="text-sm">
+        <p class="line-clamp-1">user_research_results.docx</p>
+        <p class="text-xs text-gray-600">1.2MB</p>
+      </div>
+      <button class="p-1.5 rounded-md hover:bg-gray-50">
+        <lucide-icon [name]="Download" class="size-4" />
+      </button>
+      <div class="col-span-3 w-full flex items-center text-xs gap-x-2">
+        <div class="rounded-full size-5 bg-gray-200 overflow-hidden">
+          <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="object-cover">
+        </div>
+        <p>Marianela Lizeth Santisteban Pisfil</p>
+        <p>-</p>
+        <p class="text-gray-500">Hace 1d</p>
+      </div>
+    </article>
+
+    <article class="px-3 py-2 rounded border border-gray-200 grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-2 items-center">
+      <lucide-icon [name]="File" class="size-4" />
+      <div class="text-sm">
+        <p class="line-clamp-1">competitor_analysis.pdf</p>
+        <p class="text-xs text-gray-600">3.2MB</p>
+      </div>
+      <button class="p-1.5 rounded-md hover:bg-gray-50">
+        <lucide-icon [name]="Download" class="size-4" />
+      </button>
+      <div class="col-span-3 w-full flex items-center text-xs gap-x-2">
+        <div class="rounded-full size-5 bg-gray-200 overflow-hidden">
+          <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="object-cover">
+        </div>
+        <p>Santiago Imanol Dávila Capuñay</p>
+        <p>-</p>
+        <p class="text-gray-500">Hace 2d</p>
+      </div>
+    </article>
+
+    <article class="px-3 py-2 rounded border border-gray-200 grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-2 items-center">
+      <lucide-icon [name]="File" class="size-4" />
+      <div class="text-sm">
+        <p class="line-clamp-1">design_references.zip</p>
+        <p class="text-xs text-gray-600">3.2MB</p>
+      </div>
+      <button class="p-1.5 rounded-md hover:bg-gray-50">
+        <lucide-icon [name]="Download" class="size-4" />
+      </button>
+      <div class="col-span-3 w-full flex items-center text-xs gap-x-2">
+        <div class="rounded-full size-5 bg-gray-200 overflow-hidden">
+          <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="object-cover">
+        </div>
+        <p class="truncate">Marcio Alessandro De La Cruz Capuñay</p>
+        <p>-</p>
+        <p class="text-gray-500 text-nowrap">Hace 2d</p>
+      </div>
+    </article>
+  </div>
+
+</section>

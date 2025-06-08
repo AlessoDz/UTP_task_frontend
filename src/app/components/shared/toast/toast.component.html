@@ -1,0 +1,39 @@
+@if (detailsTask) {
+
+  <div class="px-5 py-3 bg-gray-950 font-medium rounded-md grid grid-cols-[1fr_auto_auto] items-center gap-x-2 text-sm">
+
+    <button type="button"
+      class="hs-dropdown-toggle relative text-red-400 hover:underline underline-offset-4 mr-4"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-delete-task" data-hs-overlay="#modal-delete-task">
+      Eliminar
+    </button>
+
+    <!-- <button class="text-green-500 mx-4 border-gray-300 hover:underline underline-offset-4">
+      Editar
+    </button> -->
+
+    <button class="text-white ml-4 hover:underline underline-offset-4"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-shared-task" data-hs-overlay="#modal-shared-task">
+      Compartir
+    </button>
+
+  </div>
+
+}
+
+@if (detailsGroup) {
+
+  <div class="px-5 py-3 bg-gray-950 font-medium rounded-md grid grid-cols-[1fr_auto] items-center gap-x-8 text-sm">
+
+    <button type="button"
+      class="hs-dropdown-toggle relative text-red-400 hover:underline underline-offset-4"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-groups-delete" data-hs-overlay="#modal-groups-delete">
+      Eliminar
+    </button>
+
+    <button class="text-white hover:underline underline-offset-4">
+      Editar
+    </button>
+  </div>
+
+}

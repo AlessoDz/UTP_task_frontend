@@ -1,0 +1,66 @@
+<ul class="flex flex-col bg-primary h-full">
+
+  <!-- Boton Close Menu -->
+  <li class="lg:hidden">
+    <button type="button"
+      class="py-5 w-full flex flex-col text-sm items-center justify-center text-white hover:bg-primary-dark px-4"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation"
+      data-hs-overlay="#sidebar"
+    >
+
+      <lucide-icon [name]="ArrowLeft" class="size-6" />
+
+    </button>
+  </li>
+
+  <li class="lg:hidden">
+    <a
+      routerLink="/dashboard"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="bg-primary-dark"
+      class="py-4 flex flex-col text-sm items-center justify-center text-white gap-y-2 hover:bg-primary-dark px-4"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation"
+      data-hs-overlay="#sidebar"
+    >
+      <lucide-icon [name]="Home" class="size-5" />
+      <p>Inicio</p>
+    </a>
+  </li>
+
+  <li class="hidden lg:block">
+    <a
+      routerLink="/dashboard"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="bg-primary-dark"
+      class="py-4 flex flex-col text-sm items-center justify-center text-white gap-y-2 hover:bg-primary-dark px-4">
+      <lucide-icon [name]="Home" class="size-5" />
+      <p>Inicio</p>
+    </a>
+  </li>
+
+  @for(link of links; track $index) {
+    <li class="lg:hidden">
+      <a
+        routerLink="{{link.href}}"
+        routerLinkActive="bg-primary-dark"
+        class="py-4 flex flex-col text-sm items-center justify-center text-white gap-y-2 hover:bg-primary-dark px-4"
+        aria-haspopup="dialog" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation"
+        data-hs-overlay="#sidebar"
+      >
+        <lucide-icon [name]="link.icon" class="size-5" />
+        <p>{{link.text}}</p>
+      </a>
+    </li>
+
+    <li class="hidden lg:block">
+      <a
+        routerLink="{{link.href}}"
+        routerLinkActive="bg-primary-dark"
+        class="py-4 flex flex-col text-sm items-center justify-center text-white gap-y-2 hover:bg-primary-dark px-7">
+        <lucide-icon [name]="link.icon" class="size-5" />
+        <p>{{link.text}}</p>
+      </a>
+    </li>
+  }
+
+</ul>

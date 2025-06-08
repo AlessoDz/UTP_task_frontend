@@ -1,0 +1,22 @@
+<section class="w-full flex flex-col gap-y-10 relative">
+
+  <div class="flex items-center gap-x-3 ">
+    <a href="/dashboard/progreso"
+      class="text-sm underline-offset-4 pr-3 border-r border-gray-800 font-semibold text-primary flex items-center gap-x-1 hover:underline">
+      <lucide-icon [name]=ArrowLeft class="size-4" />
+      Volver a progreso
+    </a>
+    <p class="font-semibold">Detalles de puntajes</p>
+  </div>
+
+  <component-progress-points-stats />
+
+  <div class="p-5 rounded-lg shadow bg-white">
+    <component-progress-points-history />
+  </div>
+
+</section>
+
+<div id="modal-activities" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-activities-label">
+  <component-progress-points-activities />
+</div>

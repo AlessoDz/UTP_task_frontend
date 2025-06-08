@@ -1,0 +1,48 @@
+<div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-sm sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center">
+  <div class="w-full flex flex-col bg-white border border-gray-200 shadow-2xs rounded-xl pointer-events-auto">
+
+    <!-- Encabezado -->
+    <div class="flex justify-between items-center py-3 px-4 border-b border-gray-200">
+      <h3 id="modal-activities-label" class="font-bold text-gray-800">
+        Martes 2 de junio de 2025
+      </h3>
+      <button type="button" class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none" aria-label="Close" data-hs-overlay="#modal-activities">
+        <span class="sr-only">Close</span>
+        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-4 space-y-2">
+      <div class="grid grid-cols-[auto_1fr] items-center gap-x-3 bg-gray-50 shadow rounded-md w-full py-2 px-3">
+        <lucide-icon [name]="SquareCheck" class="size-5 row-span-2 text-green-600" />
+        <p class="font-semibold truncate text-sm">Clase de Programación Orientada a Objetos</p>
+        <div class="flex items-center gap-x-2 text-gray-600">
+          <lucide-icon [name]="Clock" class="size-4" />
+          <p class="text-sm">10:45 AM - 01:00 PM</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[auto_1fr] items-center gap-x-3 bg-gray-50 shadow rounded-md w-full py-2 px-3">
+        <lucide-icon [name]="SquareCheck" class="size-5 row-span-2 text-green-600" />
+        <p class="font-semibold truncate text-sm">Revisar el sílabo de Base de Datos II</p>
+        <div class="flex items-center gap-x-2 text-gray-600">
+          <lucide-icon [name]="AlarmClock" class="size-4" />
+          <p class="text-sm">09:40 PM</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[auto_1fr] items-center gap-x-3 bg-gray-50 shadow rounded-md w-full py-2 px-3">
+        <lucide-icon [name]="SquareCheck" class="size-5 row-span-2 text-green-600" />
+        <p class="font-semibold truncate text-sm">Entregar el foro de Seguridad Informática</p>
+        <div class="flex items-center gap-x-2 text-gray-600">
+          <lucide-icon [name]="AlarmClock" class="size-4" />
+          <p class="text-sm">10:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<article class="w-full bg-white py-5 space-y-5 px-5 rounded-lg shadow">
+
+  <article class="flex items-center gap-x-2 justify-between">
+    <div class="flex items-center gap-x-2">
+      <lucide-icon [name]="TrendingUp" class="size-5 stroke-[1.5]" />
+      <h3 class="font-semibold">Resumen semanal de puntos</h3>
+    </div>
+
+    <a href="/dashboard/progreso/puntaje" class="flex items-center gap-x-1 btn-primary">
+      <p class="text-sm font-semibold">Ver más</p>
+      <lucide-icon [name]="ArrowRight" class="size-5 stroke-[1.5]" />
+    </a>
+  </article>
+
+  <div class="space-y-10 w-full">
+
+    <section class="grid lg:grid-cols-3 gap-x-5 gap-y-3">
+
+      <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow border border-gray-200">
+        <div class="flex text-sm text-gray-600 items-center justify-between">
+          <h3 class="">Total de puntos</h3>
+        </div>
+
+        <div class="space-y-1">
+          <p class="font-semibold text-xl">205</p>
+          <div class="flex items-center gap-x-1 text-green-600">
+            <lucide-icon [name]="ArrowUpRight" class="size-5 stroke-[1.5]" />
+            <p class="text-sm">15% vs. semana anterior</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow border border-gray-200">
+        <div class="flex text-sm text-gray-600 items-center justify-between">
+          <h3 class="">Actividades completadas</h3>
+        </div>
+
+        <div class="space-y-1">
+          <p class="font-semibold text-xl">18</p>
+          <div class="flex items-center gap-x-1 text-green-600">
+            <lucide-icon [name]="ArrowUpRight" class="size-5 stroke-[1.5]" />
+            <p class="text-sm">3 más que la semana anterior</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow border border-gray-200">
+        <div class="flex text-sm text-gray-600 items-center justify-between">
+          <h3 class="">Promedio diario</h3>
+        </div>
+
+        <div class="space-y-1">
+          <p class="font-semibold text-xl">41</p>
+          <div class="flex items-center gap-x-1 text-red-600">
+            <lucide-icon [name]="ArrowDownRight" class="size-5 stroke-[1.5]" />
+            <p class="text-sm">5 menos que la semana anterior</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <div class="flex items-end gap-x-2 w-full max-w-[30rem] mx-auto">
+      <article class="flex flex-col text-center gap-y-2 h-full w-full">
+        <div class="h-20 bg-primary w-full"></div>
+        <div class="text-sm">Lun</div>
+      </article>
+
+      <article class="flex flex-col text-center gap-y-2 h-full w-full">
+        <div class="h-18 bg-primary w-full"></div>
+        <div class="text-sm">Mar</div>
+      </article>
+
+      <article class="flex flex-col text-center gap-y-2 h-full w-full">
+        <div class="h-24 bg-primary w-full"></div>
+        <div class="text-sm">Mie</div>
+      </article>
+
+      <article class="flex flex-col text-center gap-y-2 h-full w-full">
+        <div class="h-10 bg-primary w-full"></div>
+        <div class="text-sm">Jue</div>
+      </article>
+
+      <article class="flex flex-col text-center gap-y-2 h-full w-full">
+        <div class="h-10 bg-primary w-full"></div>
+        <div class="text-sm">Vie</div>
+      </article>
+
+      <article class="flex flex-col text-center gap-y-2 h-full w-full">
+        <div class="h-16 bg-primary w-full"></div>
+        <div class="text-sm">Sab</div>
+      </article>
+
+      <article class="flex flex-col divide-y text-center gap-y-2 h-full w-full">
+        <div class="h-0 bg-primary w-full"></div>
+        <div class="text-sm">Dom</div>
+      </article>
+    </div>
+
+
+  </div>
+
+</article>

@@ -1,0 +1,316 @@
+<div class="space-y-5">
+  <section class="flex items-center gap-x-2 justify-between ">
+    <p class="font-semibold text-primary">Tareas Grupales</p>
+    <button class="btn-primary">Crear tarea</button>
+  </section>
+
+  <section class="grid xl:grid-cols-2 gap-5">
+
+    <article class="space-y-3">
+
+      <div class="px-4 py-2 rounded-md bg-white shadow flex justify-between items-center">
+        <p class="text-primary font-semibold text-sm">Por hacer</p>
+        <div class="flex items-center justify-center font-semibold text-sm text-white bg-primary rounded-full size-7">
+          3
+        </div>
+      </div>
+
+      <div class="h-full space-y-3">
+        <a routerLink="TASK-0247"  class="block w-full p-4 bg-white rounded-md shadow">
+
+          <div class="flex items-center gap-x-2">
+            <lucide-icon [name]="AlarmClock" class="size-4.5 text-gray-500" />
+            <p class="text-sm font-semibold text-gray-500 truncate w-full">10:00 AM</p>
+            <p class="text-xs font-semibold bg-primary text-white rounded px-2 py-1.5">Alta</p>
+          </div>
+
+          <div class="text-sm py-3 space-y-1">
+            <p class="font-semibold line-clamp-1">Diseñar prototipo de aplicación móvil</p>
+            <p class="font-medium text-sm text-gray-500 line-clamp-1">Crear un prototipo para la nueva aplicación móvil de gestión de tareas.</p>
+          </div>
+
+          <article class="pt-5 grid grid-cols-[1fr_auto] gap-x-3 gap-y-5 border-t border-gray-300">
+
+            <div class="flex items-center gap-x-2 col-span-2">
+              <lucide-icon [name]="SquarCheck" class="size-5" />
+              <p class="font-semibold text-sm w-full text-start">Checklist</p>
+              <p class="font-semibold text-sm text-nowrap text-start">4 / 5</p>
+            </div>
+
+            <div class="flex items-center gap-x-1 col-span-2">
+              <div class="w-full h-1.5 rounded-xs bg-primary"></div>
+              <div class="w-full h-1.5 rounded-xs bg-primary"></div>
+              <div class="w-full h-1.5 rounded-xs bg-primary"></div>
+              <div class="w-full h-1.5 rounded-xs bg-primary"></div>
+              <div class="w-full h-1.5 rounded-xs bg-gray-300"></div>
+            </div>
+
+            <div class="flex items-center gap-x-2">
+              <div class="flex items-center p-1 rounded-md border border-gray-300">
+                <lucide-icon [name]="PaperclipIcon" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2">5</p>
+              </div>
+
+              <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+                <lucide-icon [name]="MessageSquareMore" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2 pr-1">2</p>
+              </div>
+
+              <div class="flex items-center p-1.5 rounded-md border border-gray-300">
+                <lucide-icon [name]="Bell" class="size-4" />
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <div class="size-9 border-3 border-white rounded-full bg-gray-200">
+                <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-full object-cover">
+              </div>
+              <div class="size-9 -ml-3 border-3 border-white rounded-full bg-gray-200">
+                <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-full object-cover">
+              </div>
+              <div class="size-9 -ml-3 border-3 border-white rounded-full bg-primary text-white flex items-center justify-center font-semibold text-sm">
+                +3
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <div class="w-full p-4 bg-white rounded-md shadow">
+
+          <div class="flex items-center gap-x-2">
+            <lucide-icon [name]="AlarmClock" class="size-4.5 text-gray-500" />
+            <p class="text-sm font-semibold text-gray-500 truncate w-full">08:15 PM</p>
+            <p class="text-xs font-semibold bg-amber-600 text-white rounded px-2 py-1.5">Media</p>
+          </div>
+
+          <div class="text-sm py-3 space-y-1">
+            <p class="font-semibold line-clamp-1">Entrega de informe de proyecto Ecommerce</p>
+            <p class="font-medium text-sm text-gray-500 line-clamp-1">Entrega de informe de proyecto Ecommerce.</p>
+          </div>
+
+          <article class="pt-5 grid grid-cols-[1fr_auto] gap-x-3 gap-y-5 border-t border-gray-300">
+
+            <div class="flex items-center gap-x-2">
+              <div class="flex items-center p-1 rounded-md border border-gray-300">
+                <lucide-icon [name]="PaperclipIcon" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2">0</p>
+              </div>
+
+              <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+                <lucide-icon [name]="MessageSquareMore" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2 pr-1">0</p>
+              </div>
+
+              <div class="flex items-center p-1.5 rounded-md border border-gray-300">
+                <lucide-icon [name]="Bell" class="size-4" />
+              </div>
+            </div>
+
+          </article>
+        </div>
+
+        <div class="w-full p-4 bg-white rounded shadow">
+
+          <div class="flex items-center gap-x-2">
+            <lucide-icon [name]="AlarmClock" class="size-4.5 text-gray-500" />
+            <p class="text-sm font-semibold text-gray-500 truncate w-full">10:00 PM</p>
+            <p class="text-xs font-semibold bg-primary text-white rounded px-2 py-1.5">Alta</p>
+          </div>
+
+          <div class="text-sm py-3 space-y-1">
+            <p class="font-semibold line-clamp-1">Entrega de APF Base de Datos II</p>
+            <p class="font-medium text-sm text-gray-500 line-clamp-1">Entrega de avance proyecto en UTP+class.</p>
+          </div>
+
+          <article class="pt-5 grid grid-cols-[1fr_auto] gap-x-3 gap-y-5 border-t border-gray-300">
+
+            <div class="flex items-center gap-x-2">
+              <div class="flex items-center p-1 rounded-md border border-gray-300">
+                <lucide-icon [name]="PaperclipIcon" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2">1</p>
+              </div>
+
+              <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+                <lucide-icon [name]="MessageSquareMore" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2 pr-1">0</p>
+              </div>
+
+              <div class="flex items-center p-1.5 rounded-md border border-gray-300">
+                <lucide-icon [name]="Bell" class="size-4" />
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <div class="size-10 border-3 border-white rounded-full bg-gray-200">
+                <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-full object-cover">
+              </div>
+              <div class="size-10 -ml-3 border-3 border-white rounded-full bg-gray-200">
+                <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-full object-cover">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </article>
+
+    <article class="space-y-3">
+
+      <div class="px-4 py-2 rounded-md bg-white shadow flex justify-between items-center">
+        <p class="font-semibold text-sm">En progreso</p>
+        <div class="flex items-center justify-center font-semibold text-sm text-white bg-black rounded-full size-7">
+          2
+        </div>
+      </div>
+
+      <div class="h-full space-y-3">
+        <div class="w-full p-4 bg-white rounded-md shadow">
+
+          <div class="flex items-center gap-x-2">
+            <lucide-icon [name]="Clock" class="size-4.5 text-gray-500" />
+            <p class="text-sm font-semibold text-gray-500 truncate w-full">11:30 AM - 12:00 PM</p>
+            <p class="text-xs font-semibold border rounded px-2 py-1.5">Baja</p>
+          </div>
+
+          <div class="text-sm py-3 space-y-1">
+            <p class="font-semibold line-clamp-1">Reunión Grupo de Base de Datos II</p>
+            <p class="font-medium text-sm text-gray-500 line-clamp-1">Reunión Zoom para planear los requerimientos del proyecto.</p>
+          </div>
+
+          <article class="pt-5 grid grid-cols-[1fr_auto] gap-x-3 gap-y-5 border-t border-gray-300">
+
+
+            <div class="flex items-center gap-x-2">
+              <div class="flex items-center p-1 rounded-md border border-gray-300">
+                <lucide-icon [name]="PaperclipIcon" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2">1</p>
+              </div>
+
+              <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+                <lucide-icon [name]="MessageSquareMore" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2 pr-1">1</p>
+              </div>
+
+              <div class="flex items-center p-1.5 rounded-md border border-gray-300">
+                <lucide-icon [name]="Bell" class="size-4" />
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <div class="size-9 border-3 border-white rounded-full bg-gray-200">
+                <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-full object-cover">
+              </div>
+              <div class="size-9 -ml-3 border-3 border-white rounded-full bg-gray-200">
+                <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-full object-cover">
+              </div>
+              <div class="size-9 -ml-3 border-3 border-white rounded-full bg-primary text-white flex items-center justify-center font-semibold text-sm">
+                +3
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="w-full p-4 bg-white rounded-md shadow">
+
+          <div class="flex items-center gap-x-2">
+            <lucide-icon [name]="AlarmClock" class="size-4.5 text-gray-500" />
+            <p class="text-sm font-semibold text-gray-500 truncate w-full">08:15 PM</p>
+            <p class="text-xs font-semibold bg-amber-600 text-white rounded px-2 py-1.5">Media</p>
+          </div>
+
+          <div class="text-sm py-3 space-y-1">
+            <p class="font-semibold line-clamp-1">Reunión Grupo de Base de Datos II</p>
+            <p class="font-medium text-sm text-gray-500 line-clamp-1">Reunión del grupo de Base de Datos II.</p>
+          </div>
+
+          <article class="pt-5 grid grid-cols-[1fr_auto] gap-x-3 gap-y-5 border-t border-gray-300">
+
+            <div class="flex items-center gap-x-2">
+              <div class="flex items-center p-1 rounded-md border border-gray-300">
+                <lucide-icon [name]="PaperclipIcon" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2">0</p>
+              </div>
+
+              <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+                <lucide-icon [name]="MessageSquareMore" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2 pr-1">0</p>
+              </div>
+
+              <div class="flex items-center p-1.5 rounded-md border border-gray-300">
+                <lucide-icon [name]="Bell" class="size-4" />
+              </div>
+            </div>
+
+          </article>
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="space-y-3">
+
+      <div class="px-4 py-2 rounded-md bg-white shadow flex justify-between items-center">
+        <p class="text-amber-600 font-semibold text-sm">En revisión</p>
+        <div class="flex items-center justify-center font-semibold text-sm text-white bg-amber-600 rounded-full size-7">
+          0
+        </div>
+      </div>
+
+      <div class="h-full space-y-3">
+
+        <div class="w-full p-4 min-h-[150px] bg-white rounded-md shadow flex flex-col gap-y-2 items-center justify-center">
+          <lucide-icon [name]="ClipboardList" class="size-6" />
+          <p class="text-center text-sm">No hay tareas en esta categoría</p>
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="space-y-3">
+
+      <div class="px-4 py-2 rounded-md bg-white shadow flex justify-between items-center">
+        <p class="text-blue-800 font-semibold text-sm">Completados</p>
+        <div class="flex items-center justify-center font-semibold text-sm text-white bg-blue-800 rounded-full size-7">
+          1
+        </div>
+      </div>
+
+      <div class="h-full space-y-3">
+
+        <div class="w-full p-4 bg-white rounded-md shadow">
+
+          <div class="flex items-center gap-x-2">
+            <lucide-icon [name]="Clock" class="size-4.5 text-gray-500" />
+            <p class="text-sm font-semibold text-gray-500 truncate w-full">06:00 PM - 07:45 PM</p>
+            <p class="text-xs font-semibold border rounded px-2 py-1.5">Baja</p>
+          </div>
+
+          <div class="text-sm py-3 space-y-1">
+            <p class="font-semibold line-clamp-1">Completar Foro de Sistemas Operativos</p>
+            <p class="font-medium text-sm text-gray-500 line-clamp-1">Realizar foro en UTP+class.</p>
+          </div>
+
+          <article class="pt-5 grid grid-cols-[1fr_auto] gap-x-3 gap-y-5 border-t border-gray-300">
+            <div class="flex items-center gap-x-2">
+              <div class="flex items-center p-1 rounded-md border border-gray-300">
+                <lucide-icon [name]="PaperclipIcon" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2">1</p>
+              </div>
+
+              <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+                <lucide-icon [name]="MessageSquareMore" class="size-4" />
+                <p class="font-semibold text-sm w-full text-start px-2 pr-1">0</p>
+              </div>
+
+              <div class="flex items-center p-1.5 rounded-md border border-gray-300">
+                <lucide-icon [name]="Bell" class="size-4" />
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>

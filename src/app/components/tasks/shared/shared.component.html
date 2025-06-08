@@ -1,0 +1,25 @@
+<div
+  class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-md sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center">
+  <div class="w-full flex flex-col bg-white border border-gray-200 shadow-2xs rounded-md pointer-events-auto">
+
+    <div class="flex px-4 py-3 justify-between items-center w-full bordera-b border-gray-200">
+      <p class="font-semibold">Copiar enlace</p>
+      <button class="p-2 rounded-full hover:bg-gray-100" data-hs-overlay="#modal-shared-task" >
+        <lucide-icon [name]="X" class="size-4" />
+      </button>
+    </div>
+
+
+    <div class="space-y-4 bordera-t border-t-gray-200 pb-3 px-4">
+
+      <input type="text" class="input-text w-full !text-sm " value="https://task-utp.netlify.app/dashboard/tareas/TASK0644455512" disabled>
+
+      <button class="btn-primary flex items-center w-full justify-center gap-x-2"
+      data-hs-overlay="#modal-shared-task"
+      >
+          <lucide-icon [name]="Copy" class="size-4" />
+          Copiar
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+
+<section class="w-full flex flex-col gap-y-10">
+
+  <!-- Saludo -->
+  <section class="flex items-center justify-between gap-x-2">
+
+    <div>
+      <h3 class="text-lg font-semibold line-clamp-1">Hoy 06 de junio 2025</h3>
+      <p class="text-sm text-gray-700 line-clamp-1">Tienes programado 2 actividades y 3 tareas.</p>
+    </div>
+
+    <div class="flex items-center gap-x-2">
+      <button type="button"
+        class="flex items-center gap-x-2 text-primary bg-white font-semibold text-sm px-2 md:px-3 py-2 rounded-md border border-primary"
+        aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-calendar" data-hs-overlay="#modal-calendar">
+
+        <lucide-icon [name]="Calendar1" class="size-4" />
+        <p class="text-nowrap hidden md:block">Ir a Fecha</p>
+
+      </button>
+
+      <!-- <button class="flex items-center gap-x-2 h-full text-primary bg-white font-semibold text-sm px-2 py-2 rounded-md border border-primary">
+        <p class="text-nowrap hidden md:block">Cambiar Vista</p>
+        <lucide-icon [name]="EllipsisVertical" class="size-5" />
+      </button> -->
+    </div>
+
+  </section>
+
+  <div id="modal-calendar" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-calendar-label">
+    <component-agenda-calendar />
+  </div>
+
+  <component-agenda-day-table />
+
+  <div class="flex items-center justify-between gap-x-2">
+
+    <button class="flex items-center gap-x-2 text-primary bg-white font-semibold text-sm px-3 py-2 rounded-md border border-primary hover:bg-primary hover:text-white transition-colors">
+      <lucide-icon [name]="ArrowLeft" class="size-5" />
+      <p class="text-nowrap">Anterior</p>
+    </button>
+
+    <button class="flex items-center gap-x-2 text-primary bg-white font-semibold text-sm px-3 py-2 rounded-md border border-primary hover:bg-primary hover:text-white transition-colors">
+      <p class="text-nowrap">Siguiente</p>
+      <lucide-icon [name]="ArrowRight" class="size-5" />
+    </button>
+
+  </div>
+
+</section>

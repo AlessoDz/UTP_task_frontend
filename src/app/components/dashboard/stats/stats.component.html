@@ -1,0 +1,66 @@
+<section class="grid md:grid-cols-2 xl:grid-cols-4 gap-x-5 gap-y-3">
+
+  <!-- Actividades -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow">
+    <div class="flex text-sm text-gray-600 items-center justify-between">
+      <h3 class="">Actividades de Hoy</h3>
+      <lucide-icon [name]="Calendar" class="size-5 stroke-[1.5]" />
+    </div>
+
+    <div class="space-y-1">
+      <p class="font-semibold text-xl">
+        3
+        <span class="text-sm">actividades</span>
+      </p>
+      <p class="text-sm text-gray-500">
+        2 pasadas / 1 próximas
+      </p>
+    </div>
+  </article>
+  <!-- End Actividades -->
+
+  <!-- Tareas -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow">
+    <div class="flex text-sm text-gray-600 items-center justify-between">
+      <h3 class="">Tareas de Hoy</h3>
+      <lucide-icon [name]="ListTodo" class="size-5 stroke-[1.5]" />
+    </div>
+
+    <div class="space-y-1">
+      <p class="font-semibold text-xl">2 <span class="text-sm">tareas</span></p>
+      <p class="text-sm text-gray-500">1 completados / 1 pendientes</p>
+    </div>
+  </article>
+  <!-- End Tareas -->
+
+  <!-- Racha Activa -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-lg shadow">
+    <div class="flex text-sm text-gray-600 items-center justify-between">
+      <h3 class="">Racha Activa</h3>
+      <lucide-icon [name]="Flame" class="size-5 stroke-[1.5]" />
+    </div>
+
+    <div class="space-y-1">
+      <div class="flex items-center gap-x-3 text-base font-medium">
+        <img src="/img/fire-icon.png" alt="Icono de racha" class="h-5">
+        <p class="mt-1 font-semibold">Día 3 de racha</p>
+      </div>
+      <p class="text-sm truncate text-gray-500">Hoy completaste 30 puntos.</p>
+    </div>
+  </article>
+  <!-- End Racha Activa -->
+
+  <!-- Mensaje del Día -->
+  <article class="w-full bg-white py-5 flex flex-col space-y-2 px-5 rounded-lg shadow">
+    <div class="flex text-sm text-gray-600 items-center justify-between">
+      <h3 class="">Mensaje del Día</h3>
+      <lucide-icon [name]="Sparkles" class="size-5 stroke-[1.5]" />
+    </div>
+
+    <div class="h-full flex items-center max-md:py-2 justify-center">
+      <p class="text-base font-medium text-center">Divide y vencerás: una tarea a la vez.</p>
+    </div>
+  </article>
+  <!-- End Mensaje del Día -->
+
+</section>

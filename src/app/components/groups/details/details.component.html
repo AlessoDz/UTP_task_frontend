@@ -1,0 +1,112 @@
+<section class="grid space-y-3">
+
+  <article class="p-4 sm:p-5 bg-white flex max-md:flex-col items-center justify-center gap-x-10 rounded">
+
+    <!-- Foto del grupo -->
+    <div class="bg-gray-100 rounded-full size-40 min-w-40 overflow-hidden">
+      <img src="/img/laptop-image.png" alt="" class="object-cover">
+    </div>
+
+    <!-- Información del grupo -->
+    <div class="flex flex-col max-md:items-center gap-y-3">
+      <div class="flex items-center gap-x-2 justify-between">
+        <p class="text-primary font-semibold line-clamp-2">DevMinds - Hackaton UTP 2025</p>
+
+        <div class="hs-dropdown [--placement:bottom-right] relative inline-flex">
+          <button  id="group-dropdown" type="button" class="hs-dropdown-toggle relative p-1.5 hover:bg-gray-50 rounded">
+            <lucide-icon [name]="ElipsisVertical" class="size-4.5" />
+          </button>
+
+          <div class="hs-dropdown-menu transition-[opacity,margin] border border-gray-200 duration hs-dropdown-open:opacity-100 opacity-0 z-50 hidden min-w-60 bg-white shadow-md rounded-md"
+            role="menu" aria-orientation="vertical" aria-labelledby="group-dropdown">
+            <component-groups-details-dropdown />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-x-2 text-sm">
+        <p class="text-nowrap">Creado por:</p>
+        <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-6">
+        <p class="font-semibold line-clamp-1">Andrea Lucía Esmeralda Huaro Enriquez</p>
+      </div>
+
+      <section class="flex flex-wrap max-md:justify-center items-center gap-2">
+        <div class="px-2 py-1 flex items-center gap-x-2 rounded border border-gray-200">
+          <lucide-icon [name]="User" class="size-4" />
+          <p class="text-sm">5 integrantes</p>
+        </div>
+
+        <div class="px-2 py-1 flex items-center gap-x-2 rounded border border-gray-200">
+          <lucide-icon [name]="Calendar1" class="size-4" />
+          <p class="text-sm">Creado el 7 de Junio de 2025</p>
+        </div>
+
+        <div class="px-2 py-1 flex items-center gap-x-2 rounded border border-gray-200">
+          <lucide-icon [name]="Check" class="size-4" />
+          <p class="text-sm">2 de 5 tareas completadas</p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+
+  <article class="p-4 sm:p-5 bg-white rounded space-y-7">
+    <div class="flex items-center border-b border-gray-300 sm:gap-x-2 max-w-[60rem] mx-auto w-full overflow-y-auto">
+      <button
+        (click)="selectSection('tasks')"
+        [class.text-primary]="selectedSection === 'tasks'"
+        [class.border-b-primary]="selectedSection === 'tasks'"
+        [class.font-semibold]="selectedSection === 'tasks'"
+        class="p-2 bg-white border-b-2 border-transparent text-sm"
+      >
+        Tareas
+      </button>
+
+      <button
+        (click)="selectSection('comments')"
+        [class.text-primary]="selectedSection === 'comments'"
+        [class.border-b-primary]="selectedSection === 'comments'"
+        [class.font-semibold]="selectedSection === 'comments'"
+        class="p-2 bg-white border-b-2 border-transparent hover:border-primary hover:text-primary text-sm"
+      >
+        Comentarios
+      </button>
+
+      <button
+        (click)="selectSection('files')"
+        [class.text-primary]="selectedSection === 'files'"
+        [class.border-b-primary]="selectedSection === 'files'"
+        [class.font-semibold]="selectedSection === 'files'"
+        class="p-2 bg-white border-b-2 border-transparent hover:border-primary hover:text-primary text-sm"
+      >
+        Archivos
+      </button>
+
+      <button
+        (click)="selectSection('members')"
+        [class.text-primary]="selectedSection === 'members'"
+        [class.border-b-primary]="selectedSection === 'members'"
+        [class.font-semibold]="selectedSection === 'members'"
+        class="p-2 bg-white border-b-2 border-transparent hover:border-primary hover:text-primary text-sm"
+      >
+        Integrantes
+      </button>
+    </div>
+
+    <div class="w-full max-w-[60rem] mx-auto mt-4">
+      <component-groups-details-tasks [ngClass]="{'hidden': selectedSection !== 'tasks', 'flex': selectedSection === 'tasks'}" />
+      <component-groups-details-comments [ngClass]="{'hidden': selectedSection !== 'comments', 'flex': selectedSection === 'comments'}" />
+      <component-groups-details-files [ngClass]="{'hidden': selectedSection !== 'files', 'flex': selectedSection === 'files'}" />
+      <component-groups-details-members [ngClass]="{'hidden': selectedSection !== 'members', 'flex': selectedSection === 'members'}" />
+    </div>
+
+  </article>
+</section>
+
+<div id="modal-groups-logout" class="hs-overlay hidden size-full fixed top-0 start-0 z-50 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-groups-logout">
+  <component-groups-alerts-logout />
+</div>
+
+<div id="modal-groups-delete" class="hs-overlay hidden size-full fixed top-0 start-0 z-50 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-groups-logout">
+  <components-groups-alerts-delete />
+</div>

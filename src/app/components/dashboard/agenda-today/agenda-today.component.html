@@ -1,0 +1,218 @@
+<article class="space-y-10">
+
+  <section class="flex items-center gap-x-2 justify-between">
+    <div class="">
+      <h3 class="text-lg font-semibold">Agenda de Hoy</h3>
+      <p class="text-sm text-gray-700">Tienes registrado 3 actividades y 2 tareas.</p>
+    </div>
+
+    <a href="/dashboard/agenda" class="btn-primary flex items-center gap-x-2">
+      <p class="hidden sm:block">Ver más</p>
+      <p class="sm:hidden">Ver</p>
+      <lucide-icon [name]="ArrowRight" class="size-4 hidden sm:block" />
+    </a>
+
+  </section>
+
+  <section class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+    <div
+      class="w-full p-4 bg-white rounded shadow hover:cursor-pointer"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-activity-preview1" data-hs-overlay="#modal-activity-preview1">
+
+      <div class="flex items-center gap-x-2">
+        <lucide-icon [name]="Clock" class="size-4.5 text-gray-500" />
+        <p class="text-sm font-semibold text-gray-500 truncate w-full">Disponible las 24H</p>
+        <p class="text-xs font-semibold bg-blue-800 text-nowrap text-white rounded px-2 py-1.5">Virtual 24/7</p>
+      </div>
+
+      <div class="text-sm py-5 space-y-1">
+        <p class="font-semibold line-clamp-1">Curso: Gestión de la Cadena de Valor</p>
+      </div>
+
+      <article class="grid grid-cols-[1fr_auto] gap-x-3 gap-y-5">
+
+        <div class="flex items-center gap-x-2">
+          <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+            <lucide-icon [name]="LaptopMinimal" class="size-4" />
+            <p class="font-semibold text-sm w-full text-start px-2 pr-1">UTP+class</p>
+          </div>
+
+          <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+            <lucide-icon [name]="BriefcaseBusiness" class="size-4" />
+            <p class="font-semibold text-sm text-start px-2 line-clamp-1">Patricia Abigail Alejandria Vallejos</p>
+          </div>
+        </div>
+
+      </article>
+    </div>
+
+    <div
+      class="w-full p-4 bg-white rounded shadow hover:cursor-pointer"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-activity-preview2" data-hs-overlay="#modal-activity-preview2">
+
+      <div class="flex items-center gap-x-2">
+        <lucide-icon [name]="Clock" class="size-4.5 text-gray-500" />
+        <p class="text-sm font-semibold text-gray-500 truncate w-full">Disponible las 24H</p>
+        <p class="text-xs font-semibold bg-blue-800 text-nowrap text-white rounded px-2 py-1.5">Virtual 24/7</p>
+      </div>
+
+      <div class="text-sm py-5 space-y-1">
+        <p class="font-semibold line-clamp-1">Curso: Seguridad Informática</p>
+      </div>
+
+      <article class="grid grid-cols-[1fr_auto] gap-x-3 gap-y-5">
+
+        <div class="flex items-center gap-x-2">
+          <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+            <lucide-icon [name]="LaptopMinimal" class="size-4" />
+            <p class="font-semibold text-sm w-full text-start px-2 pr-1">UTP+class</p>
+          </div>
+
+          <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+            <lucide-icon [name]="BriefcaseBusiness" class="size-4" />
+            <p class="font-semibold text-sm text-start px-2 line-clamp-1">Fernando Ignacio Diaz Sanchez</p>
+          </div>
+        </div>
+
+      </article>
+    </div>
+
+    <div
+      class="w-full p-4 bg-white rounded shadow hover:cursor-pointer"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-task-preview1" data-hs-overlay="#modal-task-preview1">
+
+      <div class="flex items-center gap-x-2">
+        <lucide-icon [name]="Clock" class="size-4.5 text-gray-500" />
+        <p class="text-sm font-semibold text-gray-500 truncate w-full">10:00 AM - 12:00PM</p>
+        <p class="text-xs font-semibold bg-primary text-white rounded px-2 py-1.5">Alta</p>
+      </div>
+
+      <div class="text-sm py-3 space-y-1">
+        <div class="font-semibold flex items-center gap-x-2">
+          <div class="bg-blue-700 rounded-full size-3"></div>
+          Diseñar prototipo de aplicación móvil
+        </div>
+        <p class="font-medium text-sm text-gray-500 line-clamp-1">Crear un prototipo para la nueva aplicación móvil de gestión de tareas.</p>
+      </div>
+
+      <article class="pt-5 grid grid-cols-[1fr_auto] gap-x-3 gap-y-5 border-t border-gray-300">
+
+
+        <div class="flex items-center gap-x-2">
+          <div class="flex items-center p-1 rounded-md border border-gray-300">
+            <lucide-icon [name]="PaperclipIcon" class="size-4" />
+            <p class="font-semibold text-sm w-full text-start px-2">5</p>
+          </div>
+
+          <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+            <lucide-icon [name]="MessageSquareMore" class="size-4" />
+            <p class="font-semibold text-sm w-full text-start px-2 pr-1">2</p>
+          </div>
+
+          <div class="flex items-center p-1.5 rounded-md border border-gray-300">
+            <lucide-icon [name]="Bell" class="size-4" />
+          </div>
+        </div>
+
+        <div class="flex items-center">
+          <div class="size-8 border-2 border-white rounded-full bg-gray-200">
+            <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-full object-cover">
+          </div>
+          <div class="size-8 -ml-3 border-2 border-white rounded-full bg-gray-200">
+            <img src="https://class.utp.edu.pe/static/media/student.42525dea.svg" alt="" class="size-full object-cover">
+          </div>
+          <div class="size-8 -ml-3 border-2 border-white rounded-full bg-primary text-white flex items-center justify-center font-semibold text-sm">
+            +3
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div
+      class="w-full p-4 bg-white rounded shadow hover:cursor-pointer"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-activity-preview3" data-hs-overlay="#modal-activity-preview3">
+
+      <div class="flex items-center gap-x-2">
+        <lucide-icon [name]="Clock" class="size-4.5 text-gray-500" />
+        <p class="text-sm font-semibold text-gray-500 truncate w-full">06:30 PM - 08:00 PM</p>
+        <p class="text-xs font-semibold bg-blue-800 text-white rounded px-2 py-1.5">Clase</p>
+      </div>
+
+      <div class="text-sm py-5 space-y-1">
+        <p class="font-semibold line-clamp-1">Curso: Sistemas Distribuidos</p>
+      </div>
+
+      <article class="grid grid-cols-[1fr_auto] gap-x-3 gap-y-5">
+
+        <div class="flex items-center gap-x-2">
+          <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+            <lucide-icon [name]="MapPin" class="size-4" />
+            <p class="font-semibold text-sm w-full text-start px-2 pr-1">B0609</p>
+          </div>
+
+          <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+            <lucide-icon [name]="BriefcaseBusiness" class="size-4" />
+            <p class="font-semibold text-sm text-start px-2 line-clamp-1">Carlos Alberto Chirinos Mundaca</p>
+          </div>
+        </div>
+
+      </article>
+    </div>
+
+    <div
+      class="w-full p-4 bg-white rounded shadow hover:cursor-pointer"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-task-preview2" data-hs-overlay="#modal-task-preview2">
+
+      <div class="flex items-center gap-x-2">
+        <lucide-icon [name]="AlarmClock" class="size-4.5 text-gray-500" />
+        <p class="text-sm font-semibold text-gray-500 truncate w-full">10:00 PM</p>
+        <p class="text-xs font-semibold bg-primary text-white rounded px-2 py-1.5">Alta</p>
+      </div>
+
+      <div class="font-semibold flex items-center text-sm py-3 gap-x-2">
+        <div class="bg-primary rounded-full size-3"></div>
+        Entregar tarea de Gestión de la cadena de valor
+      </div>
+
+      <article class="pt-5 grid grid-cols-[1fr_auto] gap-x-3 gap-y-5 border-t border-gray-300">
+        <div class="flex items-center gap-x-2">
+          <div class="flex items-center p-1 rounded-md border border-gray-300">
+            <lucide-icon [name]="PaperclipIcon" class="size-4" />
+            <p class="font-semibold text-sm w-full text-start px-2">1</p>
+          </div>
+
+          <div class="flex items-center p-1 px-2 rounded-md border border-gray-300">
+            <lucide-icon [name]="MessageSquareMore" class="size-4" />
+            <p class="font-semibold text-sm w-full text-start px-2 pr-1">0</p>
+          </div>
+
+          <div class="flex items-center p-1.5 rounded-md border border-gray-300">
+            <lucide-icon [name]="Bell" class="size-4" />
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</article>
+
+<div id="modal-activity-preview1" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-activity-preview1">
+  <component-activities-preview1 />
+</div>
+
+<div id="modal-activity-preview2" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-activity-preview2">
+  <component-activities-preview2 />
+</div>
+
+<div id="modal-activity-preview3" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-activity-preview3">
+  <component-activities-preview3 />
+</div>
+
+<div id="modal-task-preview1" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-task-preview1">
+  <component-tasks-preview1 />
+</div>
+
+<div id="modal-task-preview2" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="modal-task-preview2">
+  <component-tasks-preview2 />
+</div>

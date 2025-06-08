@@ -1,0 +1,53 @@
+<div class="pb-5 hidden sm:flex items-center sm:justify-between">
+  <p class="text-sm font-medium hidden sm:block">
+    Tienes {{ unreadCount }} notificaciones sin leer.
+  </p>
+
+  <button
+    class="text-sm font-medium text-primary underline-offset-4 hover:underline"
+    (click)="marcarTodoComoLeido()">
+    Marcar todo como leído
+  </button>
+</div>
+
+<div class="divide-y divide-gray-200">
+  <a *ngFor="let notification of visibleNotifications; trackBy: trackByIndex"
+     [routerLink]="notification.href"
+     class="py-3 flex gap-x-3 hover:bg-gray-100">
+
+    <!-- Icono -->
+    <div class="min-w-8 h-8 border border-gray-200 rounded-full flex items-center justify-center text-gray-500">
+      <lucide-icon *ngIf="notification.type === 'Task'" [name]="FileText" class="size-4" />
+      <lucide-icon *ngIf="notification.type === 'Progress'" [name]="Flame" class="size-4" />
+      <lucide-icon *ngIf="notification.type === 'Activity'" [name]="Calendar" class="size-4" />
+      <lucide-icon *ngIf="notification.type === 'Call'" [name]="Clock" class="size-4" />
+      <lucide-icon *ngIf="notification.type === 'Meeting'" [name]="Laptop" class="size-4" />
+      <lucide-icon *ngIf="notification.type === 'Comment'" [name]="MessageSquareMoreIcon" class="size-4" />
+      <lucide-icon *ngIf="notification.type === 'Message'" [name]="MessageSquareMoreIcon" class="size-4" />
+      <lucide-icon *ngIf="notification.type === 'Update'" [name]="RotateCcw" class="size-4" />
+    </div>
+
+    <!-- Contenido -->
+    <div class="grid grid-cols-[1fr_auto] gap-x-2 gap-y-1 w-full">
+      <p class="font-medium text-sm truncate">{{notification.title}}</p>
+      <p class="text-xs text-gray-500">{{notification.date}}</p>
+      <p class="text-xs text-gray-500 line-clamp-2 col-span-2">{{notification.description}}</p>
+    </div>
+
+    <!-- No Leído -->
+    <div *ngIf="!notification.read" class="flex items-center justify-center pl-5">
+      <div class="min-w-2 h-2 bg-primary rounded-full"></div>
+    </div>
+
+  </a>
+</div>
+
+<!-- Botón "Cargar más" -->
+<div *ngIf="visibleCount < notifications.length" class="px-5 mt-5 flex items-center justify-center">
+  <button
+    class="text-sm font-medium text-primary underline-offset-4 hover:underline"
+    (click)="cargarMas()">
+    Cargar más
+  </button>
+</div>
+

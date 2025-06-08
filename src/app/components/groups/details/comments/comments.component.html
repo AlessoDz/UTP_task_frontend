@@ -1,0 +1,27 @@
+<section class="w-full bg-white h-full grid grid-rows-[auto_1fr_auto] gap-y-5">
+  <h3 class="text-primary font-semibold">Comentarios</h3>
+
+  <div class="space-y-5 min-h-56 h-full overflow-y-auto">
+    <section *ngFor="let comentario of comentarios " class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+      <div class="row-span-2 bg-gray-100 rounded-full size-9">
+        <img [src]="comentario.foto" alt="Foto de perfil" class="size-full object-cover"/>
+      </div>
+      <p class="text-xs font-semibold">
+        {{ comentario.nombre }}
+        <span class="text-gray-500 text-xs font-normal ml-2">{{ comentario.tiempo }}</span>
+      </p>
+      <p class="text-sm max-sm:break-all">{{ comentario.texto }}</p>
+    </section>
+  </div>
+
+  <div class="flex items-center gap-x-2">
+    <input
+      [(ngModel)]="nuevoComentarioTexto"
+      type="text"
+      class="input-text w-full"
+      placeholder="Escribe un comentario..."
+      (keyup.enter)="agregarComentario()"
+    >
+    <button (click)="agregarComentario()" class="btn-primary !py-2.5">Enviar</button>
+  </div>
+</section>

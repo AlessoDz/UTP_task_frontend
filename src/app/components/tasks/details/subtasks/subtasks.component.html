@@ -1,0 +1,56 @@
+<section
+  class="w-full bg-white py-4 px-5 h-full grid grid-rows-[auto_1fr_auto] gap-y-3"
+>
+  <div class="flex items-center gap-x-2 justify-between">
+    <h3 class="text-primary font-semibold">Subtareas</h3>
+    <div
+      class="flex items-center px-2 py-1.5 gap-x-2 font-semibold border border-gray-200 text-sm rounded"
+    >
+      <lucide-icon [name]="Check" class="size-4"></lucide-icon>
+      <p>{{ completedCount }} de {{ subtasks.length }}</p>
+    </div>
+  </div>
+
+  <div class="min-h-52 space-y-1.5 overflow-y-auto max-h-96">
+    <div
+      *ngFor="let task of subtasks"
+      class="flex items-center gap-x-3 border rounded-lg border-gray-200 py-2.5 px-3"
+    >
+      <input
+        type="checkbox"
+        [id]="'task' + task.id"
+        [checked]="task.completed"
+        (change)="toggleCompleted(task.id)"
+      />
+      <label
+        [for]="'task' + task.id"
+        class="text-sm w-full cursor-pointer"
+        [class.line-through]="task.completed"
+        [class.text-gray-400]="task.completed"
+      >
+        {{ task.text }}
+      </label>
+      <button
+        (click)="removeSubtask(task.id)"
+        class="p-2 rounded hover:bg-gray-100"
+        aria-label="Eliminar subtarea"
+      >
+        <lucide-icon [name]="Trash" class="size-4"></lucide-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-x-2">
+    <input
+      type="text"
+      class="input-text w-full"
+      placeholder="Agregar nueva subtarea..."
+      [(ngModel)]="newSubtaskText"
+      (keyup.enter)="addSubtask()"
+      aria-label="Nueva subtarea"
+    />
+    <button (click)="addSubtask()" class="btn-primary !p-3" aria-label="Agregar subtarea">
+      <lucide-icon [name]="Plus" class="size-4.5 stroke-3"></lucide-icon>
+    </button>
+  </div>
+</section>

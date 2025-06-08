@@ -1,0 +1,69 @@
+<div
+  class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center">
+  <div class="w-full flex flex-col bg-white border border-gray-200 shadow-2xs rounded-xl pointer-events-auto">
+    <div class="flex justify-between items-center py-3 px-5">
+      <h3 id="hs-scale-animation-modal-label" class="font-semibold">
+        Crear Nuevo Grupo
+      </h3>
+      <button type="button"
+        class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent text-gray-800 hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
+        aria-label="Close" data-hs-overlay="#modal-add-group">
+        <span class="sr-only">Close</span>
+        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <form >
+
+      <section class="px-5 py-4 overflow-y-auto space-y-5">
+        <!-- Foto -->
+        <div class="flex flex-col items-center justify-center gap-y-3">
+          <div class="bg-gray-50 border border-gray-200 shadow size-24 rounded-full overflow-hidden">
+            <!-- Imagen de previsualización -->
+            <div *ngIf="!photoUrl" class="flex items-center justify-center h-full w-full">
+              <lucide-icon [name]="Image" class="text-gray-400 size-10 stroke-1" />
+            </div>
+            <img *ngIf="photoUrl" [src]="photoUrl" class="w-full h-full object-cover" alt="Imagen del grupo">
+          </div>
+          <input type="file" (change)="onFileChange($event)" class="hidden" #fileInput accept="image/*" />
+          <button type="button" (click)="fileInput.click()"
+            class="border px-2 py-1.5 border-gray-200 text-sm font-semibold rounded-md hover:bg-gray-100">
+            Subir foto
+          </button>
+        </div>
+
+        <!-- Nombre -->
+        <div class="flex flex-col gap-y-2">
+          <label for="name" class="text-sm font-semibold">Nombre</label>
+          <input type="text" id="name" formControlName="name" class="input-text" placeholder="Ej: Equipo de Marketing">
+        </div>
+
+        <!-- Descripción -->
+        <div class="flex flex-col gap-y-2">
+          <label for="description" class="text-sm font-semibold">Descripcion</label>
+          <textarea id="description" formControlName="description" rows="3" class="input-text"
+            placeholder="Describe el propósito de este grupo"></textarea>
+        </div>
+
+        <p class="text-sm text-gray-600">Podrás invitar integrantes cuando el grupo esté creado.</p>
+      </section>
+
+      <!-- Botones de accion -->
+      <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t border-gray-200">
+        <button type="button"
+          class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+          data-hs-overlay="#modal-add-group">
+          Cerrar
+        </button>
+        <button type="submit" class="btn-primary">
+          Crear Grupo
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
